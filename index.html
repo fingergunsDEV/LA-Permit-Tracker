@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LA Permitting & Compliance Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-city"></i>
+                <span>LA Permit Tracker</span>
+            </div>
+            <div class="nav-links">
+                <button class="nav-link active" data-section="dashboard">
+                    <i class="fas fa-tachometer-alt"></i>
+                    Dashboard
+                </button>
+                <button class="nav-link" data-section="permits">
+                    <i class="fas fa-file-contract"></i>
+                    Permits
+                </button>
+                <button class="nav-link" data-section="compliance">
+                    <i class="fas fa-shield-alt"></i>
+                    Compliance
+                </button>
+                <button class="nav-link" data-section="documents">
+                    <i class="fas fa-folder-open"></i>
+                    Documents
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="section active">
+            <div class="section-header">
+                <h1>Business Dashboard</h1>
+                <div class="business-selector">
+                    <select id="businessType">
+                        <option value="restaurant">Restaurant</option>
+                        <option value="retail">Retail Store</option>
+                        <option value="food-truck">Food Truck</option>
+                        <option value="construction">Construction</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="stat-card urgent">
+                    <div class="stat-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>3</h3>
+                        <p>Expiring Soon</p>
+                    </div>
+                </div>
+
+                <div class="stat-card warning">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>5</h3>
+                        <p>Pending Applications</p>
+                    </div>
+                </div>
+
+                <div class="stat-card success">
+                    <div class="stat-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>12</h3>
+                        <p>Active Permits</p>
+                    </div>
+                </div>
+
+                <div class="stat-card info">
+                    <div class="stat-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>2</h3>
+                        <p>New Updates</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-content">
+                <div class="recent-activity">
+                    <h2>Recent Activity</h2>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon urgent">
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                            <div class="activity-details">
+                                <h4>Health Permit Expiring</h4>
+                                <p>Expires in 15 days - Renewal required</p>
+                                <span class="activity-time">2 hours ago</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon success">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="activity-details">
+                                <h4>Fire Safety Inspection Passed</h4>
+                                <p>Certificate issued and filed</p>
+                                <span class="activity-time">1 day ago</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon info">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div class="activity-details">
+                                <h4>New Regulation Update</h4>
+                                <p>Outdoor dining guidelines updated</p>
+                                <span class="activity-time">3 days ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quick-actions">
+                    <h2>Quick Actions</h2>
+                    <div class="action-grid">
+                        <button class="action-button">
+                            <i class="fas fa-plus"></i>
+                            <span>Apply for Permit</span>
+                        </button>
+                        <button class="action-button">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Schedule Inspection</span>
+                        </button>
+                        <button class="action-button">
+                            <i class="fas fa-upload"></i>
+                            <span>Upload Document</span>
+                        </button>
+                        <button class="action-button">
+                            <i class="fas fa-phone"></i>
+                            <span>Contact Support</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Permits Section -->
+        <section id="permits" class="section">
+            <div class="section-header">
+                <h1>Permit Management</h1>
+                <button class="primary-button">
+                    <i class="fas fa-plus"></i>
+                    New Application
+                </button>
+            </div>
+
+            <div class="filter-bar">
+                <div class="filter-group">
+                    <select class="filter-select">
+                        <option value="all">All Permits</option>
+                        <option value="active">Active</option>
+                        <option value="pending">Pending</option>
+                        <option value="expired">Expired</option>
+                    </select>
+                </div>
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search permits...">
+                </div>
+            </div>
+
+            <div class="permits-grid">
+                <div class="permit-card active">
+                    <div class="permit-header">
+                        <h3>Business License</h3>
+                        <span class="permit-status active">Active</span>
+                    </div>
+                    <div class="permit-details">
+                        <p><strong>Permit #:</strong> BL-2024-001234</p>
+                        <p><strong>Expires:</strong> December 31, 2024</p>
+                        <p><strong>Type:</strong> General Business</p>
+                    </div>
+                    <div class="permit-actions">
+                        <button class="action-btn">
+                            <i class="fas fa-eye"></i>
+                            View
+                        </button>
+                        <button class="action-btn">
+                            <i class="fas fa-download"></i>
+                            Download
+                        </button>
+                        <button class="action-btn">
+                            <i class="fas fa-sync"></i>
+                            Renew
+                        </button>
+                    </div>
+                </div>
+
+                <div class="permit-card warning">
+                    <div class="permit-header">
+                        <h3>Health Department Permit</h3>
+                        <span class="permit-status warning">Expiring Soon</span>
+                    </div>
+                    <div class="permit-details">
+                        <p><strong>Permit #:</strong> HD-2024-005678</p>
+                        <p><strong>Expires:</strong> March 15, 2024</p>
+                        <p><strong>Type:</strong> Food Service</p>
+                    </div>
+                    <div class="permit-actions">
+                        <button class="action-btn">
+                            <i class="fas fa-eye"></i>
+                            View
+                        </button>
+                        <button class="action-btn">
+                            <i class="fas fa-download"></i>
+                            Download
+                        </button>
+                        <button class="action-btn urgent">
+                            <i class="fas fa-sync"></i>
+                            Renew Now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="permit-card pending">
+                    <div class="permit-header">
+                        <h3>Signage Permit</h3>
+                        <span class="permit-status pending">Pending</span>
+                    </div>
+                    <div class="permit-details">
+                        <p><strong>Application #:</strong> SP-2024-009876</p>
+                        <p><strong>Submitted:</strong> February 20, 2024</p>
+                        <p><strong>Type:</strong> Exterior Signage</p>
+                    </div>
+                    <div class="permit-actions">
+                        <button class="action-btn">
+                            <i class="fas fa-eye"></i>
+                            View
+                        </button>
+                        <button class="action-btn">
+                            <i class="fas fa-clock"></i>
+                            Track Status
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Compliance Section -->
+        <section id="compliance" class="section">
+            <div class="section-header">
+                <h1>Compliance Checklist</h1>
+                <div class="compliance-progress">
+                    <span>Overall Compliance: 85%</span>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 85%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="compliance-categories">
+                <div class="category-card">
+                    <div class="category-header">
+                        <h3>
+                            <i class="fas fa-utensils"></i>
+                            Food Safety
+                        </h3>
+                        <span class="category-status good">90%</span>
+                    </div>
+                    <div class="checklist">
+                        <div class="checklist-item completed">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Health Department Permit</span>
+                        </div>
+                        <div class="checklist-item completed">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Food Handler Certifications</span>
+                        </div>
+                        <div class="checklist-item pending">
+                            <i class="fas fa-clock"></i>
+                            <span>Annual Health Inspection</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-header">
+                        <h3>
+                            <i class="fas fa-fire"></i>
+                            Fire Safety
+                        </h3>
+                        <span class="category-status warning">75%</span>
+                    </div>
+                    <div class="checklist">
+                        <div class="checklist-item completed">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Fire Department Inspection</span>
+                        </div>
+                        <div class="checklist-item pending">
+                            <i class="fas fa-clock"></i>
+                            <span>Fire Extinguisher Maintenance</span>
+                        </div>
+                        <div class="checklist-item missing">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span>Emergency Exit Signage</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-header">
+                        <h3>
+                            <i class="fas fa-building"></i>
+                            Building & Zoning
+                        </h3>
+                        <span class="category-status good">95%</span>
+                    </div>
+                    <div class="checklist">
+                        <div class="checklist-item completed">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Zoning Compliance Certificate</span>
+                        </div>
+                        <div class="checklist-item completed">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Building Code Compliance</span>
+                        </div>
+                        <div class="checklist-item completed">
+                            <i class="fas fa-check-circle"></i>
+                            <span>ADA Accessibility</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Documents Section -->
+        <section id="documents" class="section">
+            <div class="section-header">
+                <h1>Document Management</h1>
+                <button class="primary-button" id="uploadBtn">
+                    <i class="fas fa-upload"></i>
+                    Upload Document
+                </button>
+            </div>
+
+            <div class="documents-container">
+                <div class="document-filters">
+                    <div class="filter-tabs">
+                        <button class="filter-tab active" data-filter="all">All Documents</button>
+                        <button class="filter-tab" data-filter="permits">Permits</button>
+                        <button class="filter-tab" data-filter="certificates">Certificates</button>
+                        <button class="filter-tab" data-filter="reports">Reports</button>
+                    </div>
+                </div>
+
+                <div class="documents-grid">
+                    <div class="document-item" data-type="permits">
+                        <div class="document-icon">
+                            <i class="fas fa-file-contract"></i>
+                        </div>
+                        <div class="document-info">
+                            <h4>Business License Certificate</h4>
+                            <p>BL-2024-001234.pdf</p>
+                            <span class="document-date">Updated: Feb 15, 2024</span>
+                        </div>
+                        <div class="document-actions">
+                            <button class="doc-action">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="doc-action">
+                                <i class="fas fa-download"></i>
+                            </button>
+                            <button class="doc-action">
+                                <i class="fas fa-share"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="document-item" data-type="certificates">
+                        <div class="document-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="document-info">
+                            <h4>Fire Safety Certificate</h4>
+                            <p>FS-2024-005678.pdf</p>
+                            <span class="document-date">Updated: Jan 28, 2024</span>
+                        </div>
+                        <div class="document-actions">
+                            <button class="doc-action">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="doc-action">
+                                <i class="fas fa-download"></i>
+                            </button>
+                            <button class="doc-action">
+                                <i class="fas fa-share"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="document-item" data-type="reports">
+                        <div class="document-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="document-info">
+                            <h4>Health Inspection Report</h4>
+                            <p>HI-2024-002345.pdf</p>
+                            <span class="document-date">Updated: Dec 10, 2023</span>
+                        </div>
+                        <div class="document-actions">
+                            <button class="doc-action">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="doc-action">
+                                <i class="fas fa-download"></i>
+                            </button>
+                            <button class="doc-action">
+                                <i class="fas fa-share"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Upload Modal -->
+    <div id="uploadModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Upload Document</h3>
+                <button class="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="upload-area" id="uploadArea">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>Drag and drop files here or click to browse</p>
+                    <input type="file" id="fileInput" multiple accept=".pdf,.jpg,.png,.doc,.docx">
+                </div>
+                <div class="document-type-selector">
+                    <label for="docType">Document Type:</label>
+                    <select id="docType">
+                        <option value="permit">Permit</option>
+                        <option value="certificate">Certificate</option>
+                        <option value="report">Report</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="secondary-button">Cancel</button>
+                <button class="primary-button">Upload</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
