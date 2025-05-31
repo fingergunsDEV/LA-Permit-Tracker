@@ -345,6 +345,86 @@ class LAPermitTracker {
                 'Building Permits': 70,
                 'Safety Compliance': 85,
                 'Environmental': 75
+            },
+            entertainment: {
+                'Film Permits': 80,
+                'Noise Ordinance': 75,
+                'Zoning Compliance': 90
+            },
+            healthcare: {
+                'Medical Licensing': 95,
+                'HIPAA Compliance': 85,
+                'Hazardous Waste': 80
+            },
+            aerospace: {
+                'Federal Compliance': 85,
+                'Environmental': 70,
+                'Security Clearance': 90
+            },
+            tourism: {
+                'Hospitality License': 85,
+                'Fire Safety': 80,
+                'Accessibility': 90
+            },
+            fashion: {
+                'Manufacturing License': 80,
+                'Labor Compliance': 75,
+                'Import/Export': 85
+            },
+            technology: {
+                'Data Privacy': 85,
+                'Intellectual Property': 80,
+                'Zoning Compliance': 90
+            },
+            'real-estate': {
+                'Real Estate License': 95,
+                'Building Code': 80,
+                'Environmental': 75
+            },
+            financial: {
+                'Financial Licensing': 95,
+                'Anti-Money Laundering': 85,
+                'Data Security': 90
+            },
+            logistics: {
+                'Transportation Permits': 80,
+                'Customs Compliance': 75,
+                'Environmental': 85
+            },
+            professional: {
+                'Professional Licensing': 90,
+                'Zoning Compliance': 85,
+                'Business License': 95
+            },
+            education: {
+                'Educational Accreditation': 90,
+                'Fire Safety': 85,
+                'Accessibility': 95
+            },
+            'food-manufacturing': {
+                'FDA Compliance': 85,
+                'Environmental': 75,
+                'Worker Safety': 80
+            },
+            automotive: {
+                'Dealer License': 85,
+                'Environmental': 80,
+                'Safety Compliance': 90
+            },
+            arts: {
+                'Cultural Permits': 85,
+                'Fire Safety': 80,
+                'Accessibility': 90
+            },
+            government: {
+                'Procurement Compliance': 95,
+                'Transparency': 90,
+                'Public Safety': 85
+            },
+            utilities: {
+                'Public Utilities Commission': 90,
+                'Environmental': 85,
+                'Safety Compliance': 95
             }
         };
         
@@ -511,4 +591,3 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     document.head.appendChild(style);
 });
-
